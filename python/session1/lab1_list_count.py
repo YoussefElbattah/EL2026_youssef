@@ -7,7 +7,6 @@ def count(lst):
     for i in lst :
         if i == 4:
             x += 1
-
     return x
 
 if __name__ == "__main__":
