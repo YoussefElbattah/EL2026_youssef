@@ -1,9 +1,12 @@
 """Sum 1 … n — Compute and display the running total."""
 
-
 def compute(number):
     """write your soulution Here Sum 1 … n — Compute and display the running total."""
-
+    x = 0
+    for i in range(1, number + 1):
+        x += i
+    print(x)
+    return x
 
 if __name__ == "__main__":
     assert compute(5) == 15, "Test case failed"

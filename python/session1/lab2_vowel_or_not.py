@@ -3,6 +3,9 @@
 
 def vowel(letter):
     """Write your solution here. Don't forget to return the result at the end."""
+    vowel_list = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U']
+    is_vowel = 1 if letter in vowel_list else 0
+    return is_vowel
 
 
 if __name__ == "__main__":
