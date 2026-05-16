@@ -11,7 +11,7 @@ def find_max_min(numbers):
         tuple: (max_value, min_value)
     """
     # Write your solution here
-
+    return (max(numbers), min(numbers))
 
 def reverse_list(items):
     """Reverse a list without using built-in reverse() method.
@@ -22,7 +22,8 @@ def reverse_list(items):
     Returns:
         list: Reversed list
     """
-    # Write your solution here
+    # Write your solution here 
+    return items[::-1]
 
 
 def list_statistics(numbers):
@@ -35,6 +36,7 @@ def list_statistics(numbers):
         dict: Dictionary with sum, average, count
     """
     # Write your solution here
+    return {"sum" : sum(numbers), "average" : sum(numbers)/len(numbers) , "count" : len(numbers)}
 
 
 def flatten_nested_list(nested_list):
@@ -47,7 +49,8 @@ def flatten_nested_list(nested_list):
         list: Flattened list
     """
     # Write your solution here
-
+    flatten_list = [x for sublist in nested_list for x in sublist]
+    return flatten_list
 
 if __name__ == "__main__":
     # Test cases
@@ -57,6 +60,7 @@ if __name__ == "__main__":
 
     print("Testing reverse_list...")
     result = reverse_list([1, 2, 3, 4, 5])
+    print(result)
     assert result == [5, 4, 3, 2, 1], f"Expected [5, 4, 3, 2, 1], got {result}"
 
     print("Testing list_statistics...")
