@@ -12,7 +12,12 @@ def dictionary_operations(dict1, dict2):
         dict: Dictionary with merged, common_keys, and unique_keys
     """
     # Write your solution here
-
+    merged = dict1.copy()
+    merged.update(dict2)
+    common_keys = {x for x in dict1.keys() if x in dict2.keys()}
+    unique_keys = {x for x in merged.keys() if x not in common_keys}
+    dictionary = {"merged" : merged, "common_keys" : common_keys , "unique_keys" : unique_keys}
+    return dictionary
 
 def count_word_frequency(text):
     """Count the frequency of each word in a text string.
@@ -24,7 +29,11 @@ def count_word_frequency(text):
         dict: Dictionary with word frequencies
     """
     # Write your solution here
-
+    list_word = text.split(" ")
+    dict_freq:dict = {}
+    for x in list_word:
+        dict_freq.update({x : text.count(x)})
+    return dict_freq
 
 def dictionary_filtering(students_grades):
     """Filter students based on their grades.
@@ -36,7 +45,11 @@ def dictionary_filtering(students_grades):
         dict: Dictionary with students who have grades >= 70
     """
     # Write your solution here
-
+    high_grades = {}
+    for x in students_grades.keys():
+        if students_grades[x] >= 70:
+            high_grades.update({x : students_grades[x]})
+    return high_grades
 
 def nested_dictionary_access(nested_dict, keys_path):
     """Access value in nested dictionary using a list of keys.
@@ -49,6 +62,10 @@ def nested_dictionary_access(nested_dict, keys_path):
         any: Value at the specified path, or None if path doesn't exist
     """
     # Write your solution here
+    x = nested_dict.get(keys_path[0])
+    for y in keys_path[1::1]:
+        x = x.get(y)
+    return x
 
 
 if __name__ == "__main__":
